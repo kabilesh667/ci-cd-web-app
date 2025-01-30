@@ -4,7 +4,7 @@ pipeline {
     environment {
         GITHUB_REPO = 'https://github.com/kabilesh667/ci-cd-web-app.git'
         DOCKER_IMAGE = 'kabilesh667/ci-cd-web-app:latest'
-        SONAR_HOST = 'http://localhost:9000'
+        SONAR_HOST = 'http://192.168.31.240:9000'
         SONAR_TOKEN = 'sqa_2e2279482ee22241b073345f0b1a18966b3d7532'
     }
 
@@ -19,9 +19,9 @@ pipeline {
             steps {
                 script {
                     sh """
-                    sonar-scanner -Dsonar.projectKey=ci-cd-web-app \
-                                  -Dsonar.host.url=${SONAR_HOST} \
-                                  -Dsonar.login=${SONAR_TOKEN}
+                    /opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=ci-cd-web-app \
+                    -Dsonar.host.url=${SONAR_HOST} \
+                    -Dsonar.login=${SONAR_TOKEN}
                     """
                 }
             }
