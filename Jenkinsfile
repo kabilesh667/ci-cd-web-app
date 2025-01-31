@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker login -u your-dockerhub-username -p your-dockerhub-password
+                    docker login -u kabilesh667 -p SK@123#!sk
                     docker push ${DOCKER_IMAGE}
                     docker logout
                     """
