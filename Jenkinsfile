@@ -54,7 +54,7 @@ pipeline {
                     docker pull ${DOCKER_IMAGE}
                     docker stop ci-cd-web-app || true
                     docker rm ci-cd-web-app || true
-                    docker run -d -p 8080:8080 --name My-Web-App ${DOCKER_IMAGE}
+                    docker run -d -p 8081:8080 --name My-Web-App ${DOCKER_IMAGE}
                     """
                 }
             }
